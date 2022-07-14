@@ -57,3 +57,45 @@ const sumWithInitial = newArr.reduce(
 }
 }
 ```
+
+### Kata Case 3
+
+```javascript
+function removeUrlAnchor(url){
+  let removed;
+  const urlRemove = url.indexOf('#');
+  if(urlRemove !== -1){
+    return removed = url.slice(0,urlRemove)
+  }
+  return url
+}
+//simple
+function removeUrlAnchor(url){
+  return url.split('#')[0];
+}
+//simple 2
+function removeUrlAnchor(url){
+  // TODO: complete
+  return url.replace(/#.*/gi,"");
+}
+
+```
+### Kata case 4
+```javascript
+function goals (laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
+  // code goes here
+  let one = laLigaGoals;
+  let two = copaDelReyGoals;
+  let three = championsLeagueGoals;
+  return one+two+three;
+}
+```
+### Kata case 5
+```javascript
+function cockroachSpeed(s) {
+  const secsInHour = 3600;
+  const centimetersInKilometers = 100000;
+  
+  return Math.floor((s*centimetersInKilometers)/secsInHour);
+}
+```
