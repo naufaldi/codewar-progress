@@ -99,3 +99,48 @@ function cockroachSpeed(s) {
   return Math.floor((s*centimetersInKilometers)/secsInHour);
 }
 ```
+
+### Kata case 7
+```javascript
+function greet (name, owner) {
+  if (name === owner) {
+    return 'Hello boss';
+  }
+  return 'Hello guest';
+}
+
+```
+### Kata case 6
+```javascript
+var min = function(list){
+    let valueMin = null;
+    let valueTemp = list[0];
+    for(let val of list){
+      if (valueTemp >= val){
+           valueTemp = val
+      }
+    }
+    return valueTemp;
+}
+
+var max = function(list){
+    
+    let valueMin = null;
+    let valueTemp = list[0];
+    for(let val of list){
+      if (valueTemp <= val){
+           valueTemp = val
+      }
+    }
+    return valueTemp;
+}
+```
+### Kata case 6
+```javascript
+```
+### Kata case 6
+```javascript
+```
+### Kata case 6
+```javascript
+```
