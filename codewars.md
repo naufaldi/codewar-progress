@@ -110,7 +110,7 @@ function greet (name, owner) {
 }
 
 ```
-### Kata case 6
+### Kata case 8
 ```javascript
 var min = function(list){
     let valueMin = null;
@@ -135,11 +135,38 @@ var max = function(list){
     return valueTemp;
 }
 ```
-### Kata case 6
+### Kata case 9
 ```javascript
+function findShort(s){
+  let string = s;
+  let array = string.split(" ");
+  let arrayMin = 0;
+  let arrayTemp = 0;
+  for(let i =0; i < array.length; i++){
+    
+    arrayMin = Array.from(array[i]).length;
+    
+    if(arrayTemp === 0 ){
+      arrayTemp = arrayMin;
+    } else if(arrayTemp > arrayMin){
+      arrayTemp = arrayMin;
+    }
+  }
+  return arrayTemp
+}
+// other people
+function findShort(s){
+  return Math.min.apply(null, s.split(' ').map(w => w.length));
+}
+
 ```
-### Kata case 6
+### Kata case 10
 ```javascript
+function removeSmallest(numbers) {
+  let indexOfMin = numbers.indexOf(Math.min(...numbers));
+  return [...numbers.slice(0, indexOfMin), ...numbers.slice(indexOfMin + 1)];
+}
+// without mutating
 ```
 ### Kata case 6
 ```javascript
