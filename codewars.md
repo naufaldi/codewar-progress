@@ -168,6 +168,45 @@ function removeSmallest(numbers) {
 }
 // without mutating
 ```
-### Kata case 6
+### Kata case 11
 ```javascript
+function longest(s1, s2) {
+  // your code
+  const ar1 = s1.split('');
+  const ar2 = s2.split('');
+  const ar3 = [...new Set([...ar1,...ar2])]
+
+  const str1 = ar3.sort().join('')
+  return str1
+}
+```
+### Kata case 12
+```javascript
+function isPalindrome(x) {
+  // your code here
+  const arr1 = x.toLowerCase('');
+  const arr2 = x.toLowerCase('').split('').reverse().join('');
+  if(arr1 === arr2 ){
+    return true
+  } else {
+    return false
+  }
+  
+}
+```
+### Kata case 13
+```javascript
+
+```
+### Kata case 12
+```javascript
+
+```
+### Kata case 13
+```javascript
+
+```
+### Kata case 14
+```javascript
+
 ```
