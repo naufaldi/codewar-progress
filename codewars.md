@@ -61,106 +61,115 @@ const sumWithInitial = newArr.reduce(
 ### Kata Case 3
 
 ```javascript
-function removeUrlAnchor(url){
+function removeUrlAnchor(url) {
   let removed;
   const urlRemove = url.indexOf('#');
-  if(urlRemove !== -1){
-    return removed = url.slice(0,urlRemove)
+  if (urlRemove !== -1) {
+    return (removed = url.slice(0, urlRemove));
   }
-  return url
+  return url;
 }
 //simple
-function removeUrlAnchor(url){
+function removeUrlAnchor(url) {
   return url.split('#')[0];
 }
 //simple 2
-function removeUrlAnchor(url){
+function removeUrlAnchor(url) {
   // TODO: complete
-  return url.replace(/#.*/gi,"");
+  return url.replace(/#.*/gi, '');
 }
-
 ```
+
 ### Kata case 4
+
 ```javascript
-function goals (laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
+function goals(laLigaGoals, copaDelReyGoals, championsLeagueGoals) {
   // code goes here
   let one = laLigaGoals;
   let two = copaDelReyGoals;
   let three = championsLeagueGoals;
-  return one+two+three;
+  return one + two + three;
 }
 ```
+
 ### Kata case 5
+
 ```javascript
 function cockroachSpeed(s) {
   const secsInHour = 3600;
   const centimetersInKilometers = 100000;
-  
-  return Math.floor((s*centimetersInKilometers)/secsInHour);
+
+  return Math.floor((s * centimetersInKilometers) / secsInHour);
 }
 ```
 
 ### Kata case 7
+
 ```javascript
-function greet (name, owner) {
+function greet(name, owner) {
   if (name === owner) {
     return 'Hello boss';
   }
   return 'Hello guest';
 }
-
 ```
+
 ### Kata case 8
-```javascript
-var min = function(list){
-    let valueMin = null;
-    let valueTemp = list[0];
-    for(let val of list){
-      if (valueTemp >= val){
-           valueTemp = val
-      }
-    }
-    return valueTemp;
-}
 
-var max = function(list){
-    
-    let valueMin = null;
-    let valueTemp = list[0];
-    for(let val of list){
-      if (valueTemp <= val){
-           valueTemp = val
-      }
-    }
-    return valueTemp;
-}
-```
-### Kata case 9
 ```javascript
-function findShort(s){
+var min = function (list) {
+  let valueMin = null;
+  let valueTemp = list[0];
+  for (let val of list) {
+    if (valueTemp >= val) {
+      valueTemp = val;
+    }
+  }
+  return valueTemp;
+};
+
+var max = function (list) {
+  let valueMin = null;
+  let valueTemp = list[0];
+  for (let val of list) {
+    if (valueTemp <= val) {
+      valueTemp = val;
+    }
+  }
+  return valueTemp;
+};
+```
+
+### Kata case 9
+
+```javascript
+function findShort(s) {
   let string = s;
-  let array = string.split(" ");
+  let array = string.split(' ');
   let arrayMin = 0;
   let arrayTemp = 0;
-  for(let i =0; i < array.length; i++){
-    
+  for (let i = 0; i < array.length; i++) {
     arrayMin = Array.from(array[i]).length;
-    
-    if(arrayTemp === 0 ){
+
+    if (arrayTemp === 0) {
       arrayTemp = arrayMin;
-    } else if(arrayTemp > arrayMin){
+    } else if (arrayTemp > arrayMin) {
       arrayTemp = arrayMin;
     }
   }
-  return arrayTemp
+  return arrayTemp;
 }
 // other people
-function findShort(s){
-  return Math.min.apply(null, s.split(' ').map(w => w.length));
+function findShort(s) {
+  return Math.min.apply(
+    null,
+    s.split(' ').map((w) => w.length)
+  );
 }
-
 ```
+
 ### Kata case 10
+
 ```javascript
 function removeSmallest(numbers) {
   let indexOfMin = numbers.indexOf(Math.min(...numbers));
@@ -168,45 +177,91 @@ function removeSmallest(numbers) {
 }
 // without mutating
 ```
+
 ### Kata case 11
+
 ```javascript
 function longest(s1, s2) {
   // your code
   const ar1 = s1.split('');
   const ar2 = s2.split('');
-  const ar3 = [...new Set([...ar1,...ar2])]
+  const ar3 = [...new Set([...ar1, ...ar2])];
 
-  const str1 = ar3.sort().join('')
-  return str1
+  const str1 = ar3.sort().join('');
+  return str1;
 }
 ```
+
 ### Kata case 12
+
 ```javascript
 function isPalindrome(x) {
   // your code here
   const arr1 = x.toLowerCase('');
   const arr2 = x.toLowerCase('').split('').reverse().join('');
-  if(arr1 === arr2 ){
-    return true
+  if (arr1 === arr2) {
+    return true;
   } else {
-    return false
+    return false;
   }
-  
 }
 ```
-### Kata case 13
-```javascript
 
+### Kata case 13
+
+```javascript
+function toCamelCase(str) {
+  if (str !== '') {
+    if (str.includes('_')) {
+      let arr = str.split('_');
+      let arrTempt = [];
+      for (let i = 0; i < arr.length; i++) {
+        let arrVar = arr[i];
+        if (i === 0) {
+          arrTempt.push(arr[i]);
+        } else {
+          arrTempt.push(arrVar[0].toUpperCase() + arrVar.substring(1));
+        }
+      }
+      return arrTempt.join('');
+    } else if (str.includes('-')) {
+      let arr = str.split('-');
+      let arrTempt = [];
+      for (let i = 0; i < arr.length; i++) {
+        let arrVar = arr[i];
+        if (i === 0) {
+          arrTempt.push(arr[i]);
+        } else {
+          arrTempt.push(arrVar[0].toUpperCase() + arrVar.substring(1));
+        }
+      }
+      return arrTempt.join('');
+    }
+  } else {
+    return str;
+  }
+}
+
+// KATA SHORT ANSWER
+function toCamelCase(str) {
+  return str.replace(/[-_](.)/g, (_, c) => c.toUpperCase());
+}
 ```
+
 ### Kata case 12
+
 ```javascript
 
 ```
+
 ### Kata case 13
+
 ```javascript
 
 ```
+
 ### Kata case 14
+
 ```javascript
 
 ```
