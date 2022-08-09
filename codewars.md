@@ -248,10 +248,12 @@ function toCamelCase(str) {
 }
 ```
 
-### Kata case 12
+### Kata case 14
 
 ```javascript
-
+function getCount(str) {
+  return (str.match(/[aeiou]/ig)||[]).length;
+}
 ```
 
 ### Kata case 13
