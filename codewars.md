@@ -248,11 +248,11 @@ function toCamelCase(str) {
 }
 ```
 
-### Kata case 14
+### Kata case 12
 
 ```javascript
-function getCount(str) {
-  return (str.match(/[aeiou]/ig)||[]).length;
+function smash(words) {
+  return words.join(' ');
 }
 ```
 
