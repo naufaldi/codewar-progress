@@ -259,10 +259,56 @@ function smash(words) {
 ### Kata case 13
 
 ```javascript
+function fakeBin(x) {
+  const arr = x.split('');
+  let newArr = [];
 
+  for (let i = 0; i <= x.length; i++) {
+    if (parseInt(arr[i]) >= 5) {
+      newArr.push('1');
+    } else if (parseInt(arr[i]) < 5) {
+      newArr.push('0');
+    }
+  }
+  return newArr.join('');
+}
+
+// another solution
+function fakeBin(x) {
+  return x
+    .split('')
+    .map((n) => (n < 5 ? 0 : 1))
+    .join('');
+}
 ```
 
 ### Kata case 14
+
+```javascript
+function dontGiveMeFive(start, end) {
+  let arr = [];
+
+  for (let i = start; i <= end; i++) {
+    if (!((i + '').indexOf('5') > -1)) {
+      arr.push(i);
+    }
+  }
+  return arr.length;
+}
+
+// another solution
+function dontGiveMeFive(start, end) {
+  let count = 0;
+  for (let i = start; i <= end; i++) {
+    if (!/5/.test(i)) {
+      count++;
+    }
+  }
+  return count;
+}
+```
+
+### Kata case 15
 
 ```javascript
 
