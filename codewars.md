@@ -259,11 +259,45 @@ function getCount(str) {
 ### Kata case 13
 
 ```javascript
+function testEven(n) {
+    return n%2===0;
+}
 
 ```
 
 ### Kata case 14
 
 ```javascript
+function expandedForm(num) {
+  // Your code here
+  const arrNum = Array.from(String(num), Number);
+  
+  for(let i = 0; i < arrNum.length; i++){
+     for(let y = arrNum.length - i; y > 1 ; y--){
+       if(!arrNum[i]=='0'){
+         arrNum[i] += '0';
+       }
+     }
+  }
+ // how can '0' is not number ? 
+  return arrNum.filter(Number).join(' + ')
+}
+
+//alternative
+const expandedForm = n => n.toString()
+                            .split("")
+                            .reverse()
+                            .map( (a, i) => a * Math.pow(10, i))
+                            .filter(a => a > 0)
+                            .reverse()
+                            .join(" + ");
+//alternative
+const expandedForm = n => n.toString()
+                            .split("")
+                            .reverse()
+                            .map( (a, i) => a * Math.pow(10, i))
+                            .filter(a => a > 0)
+                            .reverse()
+                            .join(" + ");
 
 ```
