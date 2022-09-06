@@ -248,26 +248,49 @@ function toCamelCase(str) {
 }
 ```
 
-### Kata case 14
+### Kata case 12
 
 ```javascript
-function getCount(str) {
-  return (str.match(/[aeiou]/ig)||[]).length;
+function smash(words) {
+  return words.join(' ');
 }
 ```
 
 ### Kata case 13
 
 ```javascript
+<<<<<<< HEAD
 function testEven(n) {
     return n%2===0;
+=======
+function fakeBin(x) {
+  const arr = x.split('');
+  let newArr = [];
+
+  for (let i = 0; i <= x.length; i++) {
+    if (parseInt(arr[i]) >= 5) {
+      newArr.push('1');
+    } else if (parseInt(arr[i]) < 5) {
+      newArr.push('0');
+    }
+  }
+  return newArr.join('');
+>>>>>>> 798bb0ddf1ae06ef2a4d831913d67bb330535648
 }
 
+// another solution
+function fakeBin(x) {
+  return x
+    .split('')
+    .map((n) => (n < 5 ? 0 : 1))
+    .join('');
+}
 ```
 
 ### Kata case 14
 
 ```javascript
+<<<<<<< HEAD
 function expandedForm(num) {
   // Your code here
   const arrNum = Array.from(String(num), Number);
@@ -299,5 +322,33 @@ const expandedForm = n => n.toString()
                             .filter(a => a > 0)
                             .reverse()
                             .join(" + ");
+=======
+function dontGiveMeFive(start, end) {
+  let arr = [];
+
+  for (let i = start; i <= end; i++) {
+    if (!((i + '').indexOf('5') > -1)) {
+      arr.push(i);
+    }
+  }
+  return arr.length;
+}
+
+// another solution
+function dontGiveMeFive(start, end) {
+  let count = 0;
+  for (let i = start; i <= end; i++) {
+    if (!/5/.test(i)) {
+      count++;
+    }
+  }
+  return count;
+}
+```
+
+### Kata case 15
+
+```javascript
+>>>>>>> 798bb0ddf1ae06ef2a4d831913d67bb330535648
 
 ```
