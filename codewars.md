@@ -290,39 +290,41 @@ function fakeBin(x) {
 ### Kata case 14
 
 ```javascript
-<<<<<<< HEAD
 function expandedForm(num) {
   // Your code here
   const arrNum = Array.from(String(num), Number);
-  
-  for(let i = 0; i < arrNum.length; i++){
-     for(let y = arrNum.length - i; y > 1 ; y--){
-       if(!arrNum[i]=='0'){
-         arrNum[i] += '0';
-       }
-     }
+
+  for (let i = 0; i < arrNum.length; i++) {
+    for (let y = arrNum.length - i; y > 1; y--) {
+      if (!arrNum[i] == '0') {
+        arrNum[i] += '0';
+      }
+    }
   }
- // how can '0' is not number ? 
-  return arrNum.filter(Number).join(' + ')
+  // how can '0' is not number ?
+  return arrNum.filter(Number).join(' + ');
 }
 
 //alternative
-const expandedForm = n => n.toString()
-                            .split("")
-                            .reverse()
-                            .map( (a, i) => a * Math.pow(10, i))
-                            .filter(a => a > 0)
-                            .reverse()
-                            .join(" + ");
+const expandedForm = (n) =>
+  n
+    .toString()
+    .split('')
+    .reverse()
+    .map((a, i) => a * Math.pow(10, i))
+    .filter((a) => a > 0)
+    .reverse()
+    .join(' + ');
 //alternative
-const expandedForm = n => n.toString()
-                            .split("")
-                            .reverse()
-                            .map( (a, i) => a * Math.pow(10, i))
-                            .filter(a => a > 0)
-                            .reverse()
-                            .join(" + ");
-=======
+const expandedForm = (n) =>
+  n
+    .toString()
+    .split('')
+    .reverse()
+    .map((a, i) => a * Math.pow(10, i))
+    .filter((a) => a > 0)
+    .reverse()
+    .join(' + ');
 function dontGiveMeFive(start, end) {
   let arr = [];
 
@@ -349,6 +351,52 @@ function dontGiveMeFive(start, end) {
 ### Kata case 15
 
 ```javascript
->>>>>>> 798bb0ddf1ae06ef2a4d831913d67bb330535648
+function DNAtoRNA(dna) {
+  // create a function which returns an RNA sequence from the given DNA sequence
+  let arrTemp = [];
+  let arr = dna.split('');
 
+  for (let i = 0; i <= arr.length; i++) {
+    if (arr[i] === 'T') {
+      arrTemp.push('U');
+    } else {
+      arrTemp.push(arr[i]);
+    }
+  }
+  return arrTemp.join('');
+}
+
+// another solution
+function DNAtoRNA(dna) {
+  return dna.replace(/T/g, 'U');
+}
+```
+
+### Kata case 16
+
+```javascript
+function dup(s) {
+  //..
+  let newArrAll = [];
+
+  for (let i = 0; i < s.length; i++) {
+    let newArr = s[i].split('');
+    let tempArr = [];
+    let temp = '';
+
+    for (let j = 0; j < newArr.length; j++) {
+      if (newArr[j] !== temp) {
+        tempArr.push(newArr[j]);
+        temp = newArr[j];
+      }
+    }
+    newArrAll.push(tempArr.join(''));
+  }
+  return newArrAll;
+}
+
+// another solution
+function dup(s) {
+  return s.map((x) => x.replace(/(.)\1+/g, '$1'));
+}
 ```
