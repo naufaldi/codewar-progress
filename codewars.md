@@ -400,3 +400,11 @@ function dup(s) {
   return s.map((x) => x.replace(/(.)\1+/g, '$1'));
 }
 ```
+
+### Kata case 17
+
+```javascript
+function roundToNext5(n) {
+  return Math.ceil(n / 5) * 5;
+}
+```
