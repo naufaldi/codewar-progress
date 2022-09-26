@@ -400,3 +400,47 @@ function dup(s) {
   return s.map((x) => x.replace(/(.)\1+/g, '$1'));
 }
 ```
+
+### Kata case 17
+
+```javascript
+function getSum(a, b) {
+  //Good luck!
+  if (a == b) {
+    return a;
+  } else if (a < b) {
+    let val = 0;
+    for (let i = a; i <= b; i++) {
+      val += i;
+    }
+    return val;
+  } else {
+    let val = 0;
+    for (let i = b; i <= a; i++) {
+      val += i;
+    }
+    return val;
+  }
+}
+
+// another solution
+const GetSum = (a, b) => {
+  let min = Math.min(a, b),
+    max = Math.max(a, b);
+  return ((max - min + 1) * (min + max)) / 2;
+};
+
+function GetSum(a, b) {
+  return ((Math.abs(a - b) + 1) * (a + b)) / 2;
+}
+```
+
+### Kata case 18
+
+```javascript
+function addBinary(a, b) {
+  let sum = a + b;
+
+  return sum.toString(2);
+}
+```
