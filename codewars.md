@@ -442,5 +442,7 @@ function addBinary(a, b) {
   let sum = a + b;
 
   return sum.toString(2);
+function roundToNext5(n) {
+  return Math.ceil(n / 5) * 5;
 }
 ```
