@@ -495,3 +495,39 @@ function makeNegative(num) {
   return -Math.abs(num);
 }
 ```
+
+### Kata case 21
+
+```javascript
+function minMax(arr) {
+  const min = Math.min(...arr);
+  const max = Math.max(...arr);
+  return [min, max];
+}
+```
+
+### Kata case 22
+
+```javascript
+var number = function (busStops) {
+  let pass = 0;
+  let term = 0;
+
+  for (let i = 0; i < busStops.length; i++) {
+    console.log(busStops[i]);
+    for (let j = 0; j < busStops[i].length; j++) {
+      console.log(busStops[i][j]);
+      if (j == 0) {
+        pass += busStops[i][j];
+      } else if (j == 1) {
+        term += busStops[i][j];
+      }
+    }
+  }
+  return pass - term;
+};
+
+// other solution
+const number = (busStops) =>
+  busStops.reduce((rem, [on, off]) => rem + on - off, 0);
+```
