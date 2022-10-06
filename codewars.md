@@ -446,3 +446,52 @@ function roundToNext5(n) {
   return Math.ceil(n / 5) * 5;
 }
 ```
+
+### Kata case 19
+
+```javascript
+function SeriesSum(n) {
+  // Happy Coding ^_^
+  let penyebut = 1;
+
+  let arr = [];
+  for (let i = 1; i <= n; i++) {
+    let temp = 1.0 / penyebut;
+    penyebut += 3.0;
+    arr.push(temp);
+  }
+
+  let sumArr = parseFloat(
+    arr.reduce((previousValue, currentValue) => previousValue + currentValue, 0)
+  ).toFixed(2);
+  console.log(sumArr);
+  return sumArr;
+}
+//other kata
+function SeriesSum(n) {
+  for (var s = 0, i = 0; i < n; i++) {
+    s += 1 / (1 + i * 3);
+  }
+
+  return s.toFixed(2);
+}
+```
+
+### Kata case 20
+
+```javascript
+function makeNegative(num) {
+  // Code?
+  if (num < 0) {
+    return num;
+  } else if (num == 0) {
+    return 0;
+  } else {
+    return num * -1;
+  }
+}
+//other kata
+function makeNegative(num) {
+  return -Math.abs(num);
+}
+```
