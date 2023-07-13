@@ -293,27 +293,38 @@ function fakeBin(x) {
 function expandedForm(num) {
   // Your code here
   const arrNum = Array.from(String(num), Number);
-  
-  for(let i = 0; i < arrNum.length; i++){
-     for(let y = arrNum.length - i; y > 1 ; y--){
-       if(!arrNum[i]=='0'){
-         arrNum[i] += '0';
-       }
-     }
+
+  for (let i = 0; i < arrNum.length; i++) {
+    for (let y = arrNum.length - i; y > 1; y--) {
+      if (!arrNum[i] == '0') {
+        arrNum[i] += '0';
+      }
+    }
   }
- // how can '0' is not number ? 
-  return arrNum.filter(Number).join(' + ')
+  // how can '0' is not number ?
+  return arrNum.filter(Number).join(' + ');
 }
 
 //alternative
-const expandedForm = n => n.toString()
-                            .split("")
-                            .reverse()
-                            .map( (a, i) => a * Math.pow(10, i))
-                            .filter(a => a > 0)
-                            .reverse()
-                            .join(" + ");
+const expandedForm = (n) =>
+  n
+    .toString()
+    .split('')
+    .reverse()
+    .map((a, i) => a * Math.pow(10, i))
+    .filter((a) => a > 0)
+    .reverse()
+    .join(' + ');
 //alternative
+const expandedForm = (n) =>
+  n
+    .toString()
+    .split('')
+    .reverse()
+    .map((a, i) => a * Math.pow(10, i))
+    .filter((a) => a > 0)
+    .reverse()
+    .join(' + ');
 const expandedForm = n => n.toString()
                             .split("")
                             .reverse()
@@ -347,5 +358,183 @@ function dontGiveMeFive(start, end) {
 ### Kata case 15
 
 ```javascript
+function DNAtoRNA(dna) {
+  // create a function which returns an RNA sequence from the given DNA sequence
+  let arrTemp = [];
+  let arr = dna.split('');
 
+  for (let i = 0; i <= arr.length; i++) {
+    if (arr[i] === 'T') {
+      arrTemp.push('U');
+    } else {
+      arrTemp.push(arr[i]);
+    }
+  }
+  return arrTemp.join('');
+}
+
+// another solution
+function DNAtoRNA(dna) {
+  return dna.replace(/T/g, 'U');
+}
+```
+
+### Kata case 16
+
+```javascript
+function dup(s) {
+  //..
+  let newArrAll = [];
+
+  for (let i = 0; i < s.length; i++) {
+    let newArr = s[i].split('');
+    let tempArr = [];
+    let temp = '';
+
+    for (let j = 0; j < newArr.length; j++) {
+      if (newArr[j] !== temp) {
+        tempArr.push(newArr[j]);
+        temp = newArr[j];
+      }
+    }
+    newArrAll.push(tempArr.join(''));
+  }
+  return newArrAll;
+}
+
+// another solution
+function dup(s) {
+  return s.map((x) => x.replace(/(.)\1+/g, '$1'));
+}
+```
+
+### Kata case 17
+
+```javascript
+function getSum(a, b) {
+  //Good luck!
+  if (a == b) {
+    return a;
+  } else if (a < b) {
+    let val = 0;
+    for (let i = a; i <= b; i++) {
+      val += i;
+    }
+    return val;
+  } else {
+    let val = 0;
+    for (let i = b; i <= a; i++) {
+      val += i;
+    }
+    return val;
+  }
+}
+
+// another solution
+const GetSum = (a, b) => {
+  let min = Math.min(a, b),
+    max = Math.max(a, b);
+  return ((max - min + 1) * (min + max)) / 2;
+};
+
+function GetSum(a, b) {
+  return ((Math.abs(a - b) + 1) * (a + b)) / 2;
+}
+```
+
+### Kata case 18
+
+```javascript
+function addBinary(a, b) {
+  let sum = a + b;
+
+  return sum.toString(2);
+function roundToNext5(n) {
+  return Math.ceil(n / 5) * 5;
+}
+```
+
+### Kata case 19
+
+```javascript
+function SeriesSum(n) {
+  // Happy Coding ^_^
+  let penyebut = 1;
+
+  let arr = [];
+  for (let i = 1; i <= n; i++) {
+    let temp = 1.0 / penyebut;
+    penyebut += 3.0;
+    arr.push(temp);
+  }
+
+  let sumArr = parseFloat(
+    arr.reduce((previousValue, currentValue) => previousValue + currentValue, 0)
+  ).toFixed(2);
+  console.log(sumArr);
+  return sumArr;
+}
+//other kata
+function SeriesSum(n) {
+  for (var s = 0, i = 0; i < n; i++) {
+    s += 1 / (1 + i * 3);
+  }
+
+  return s.toFixed(2);
+}
+```
+
+### Kata case 20
+
+```javascript
+function makeNegative(num) {
+  // Code?
+  if (num < 0) {
+    return num;
+  } else if (num == 0) {
+    return 0;
+  } else {
+    return num * -1;
+  }
+}
+//other kata
+function makeNegative(num) {
+  return -Math.abs(num);
+}
+```
+
+### Kata case 21
+
+```javascript
+function minMax(arr) {
+  const min = Math.min(...arr);
+  const max = Math.max(...arr);
+  return [min, max];
+}
+```
+
+### Kata case 22
+
+```javascript
+var number = function (busStops) {
+  let pass = 0;
+  let term = 0;
+
+  for (let i = 0; i < busStops.length; i++) {
+    console.log(busStops[i]);
+    for (let j = 0; j < busStops[i].length; j++) {
+      console.log(busStops[i][j]);
+      if (j == 0) {
+        pass += busStops[i][j];
+      } else if (j == 1) {
+        term += busStops[i][j];
+      }
+    }
+  }
+  return pass - term;
+};
+
+// other solution
+const number = (busStops) =>
+  busStops.reduce((rem, [on, off]) => rem + on - off, 0);
 ```
