@@ -290,7 +290,6 @@ function fakeBin(x) {
 ### Kata case 14
 
 ```javascript
-<<<<<<< HEAD
 function expandedForm(num) {
   // Your code here
   const arrNum = Array.from(String(num), Number);
@@ -322,7 +321,6 @@ const expandedForm = n => n.toString()
                             .filter(a => a > 0)
                             .reverse()
                             .join(" + ");
-=======
 function dontGiveMeFive(start, end) {
   let arr = [];
 
@@ -349,6 +347,5 @@ function dontGiveMeFive(start, end) {
 ### Kata case 15
 
 ```javascript
->>>>>>> 798bb0ddf1ae06ef2a4d831913d67bb330535648
 
 ```
